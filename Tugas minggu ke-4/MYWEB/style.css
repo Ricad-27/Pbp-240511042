@@ -1,0 +1,732 @@
+/* ========================================================
+   PROFIL MAHASISWA - RIZWAR CAHYADI (240511042)
+   Pemrograman Berbasis Platform (LKP 2A & LKP 2B)
+   Teknik Informatika - Universitas Muhammadiyah Cirebon
+   ======================================================== */
+
+/* CSS Variables & Theme Setup */
+:root {
+  --primary: #0066cc;
+  --primary-dark: #004c99;
+  --primary-light: #e6f2ff;
+  --accent: #00aaff;
+  --text-dark: #0f172a;
+  --text-body: #334155;
+  --text-muted: #64748b;
+  --bg-body: #f8fafc;
+  --bg-card: #ffffff;
+  --border-color: #dbeafe;
+  --border-subtle: #e2e8f0;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 102, 204, 0.08);
+  --shadow-lg: 0 10px 25px -3px rgba(0, 102, 204, 0.15);
+  --transition: all 0.25s ease;
+}
+
+/* Reset & Base Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif;
+  color: var(--text-body);
+  background-color: var(--bg-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========================================================
+   HEADER / HERO SECTION
+   ======================================================== */
+header {
+  background: linear-gradient(135deg, #0052a3 0%, var(--primary) 50%, var(--accent) 100%);
+  color: #ffffff;
+  padding: 48px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 20%);
+  background-size: 24px 24px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.header-container {
+  max-width: 760px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.foto-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.foto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  display: block;
+  transition: var(--transition);
+}
+
+.foto:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+.status-badge {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 18px;
+  height: 18px;
+  background-color: #10b981;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+}
+
+header h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  opacity: 0.95;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.subtitle strong {
+  color: #ffffff;
+}
+
+.badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.pill-badge {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* ========================================================
+   NAVIGASI (FLEXBOX)
+   ======================================================== */
+nav {
+  background: #1e293b;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 14px 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+nav a.nav-link {
+  color: #f1f5f9;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  position: relative;
+  padding: 4px 0;
+  transition: var(--transition);
+}
+
+nav a.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--accent);
+  transition: var(--transition);
+}
+
+nav a.nav-link:hover {
+  color: var(--accent);
+}
+
+nav a.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ========================================================
+   KONTEN UTAMA
+   ======================================================== */
+main {
+  max-width: 960px;
+  margin: 36px auto;
+  padding: 0 20px;
+}
+
+section {
+  margin-bottom: 48px;
+}
+
+h2 {
+  color: var(--text-dark);
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-bottom: 3px solid var(--primary);
+  padding-bottom: 8px;
+  margin-bottom: 22px;
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--accent);
+}
+
+/* ========================================================
+   SECTION: TENTANG SAYA
+   ======================================================== */
+.about-card {
+  background: var(--bg-card);
+  padding: 26px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.about-card p {
+  margin-bottom: 14px;
+  text-align: justify;
+  font-size: 1rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  background: var(--primary-light);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--primary);
+}
+
+.info-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  color: var(--primary-dark);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.info-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-top: 2px;
+}
+
+/* ========================================================
+   SECTION: PENDIDIKAN (TIMELINE)
+   ======================================================== */
+.timeline {
+  position: relative;
+  padding-left: 28px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 9px;
+  width: 2px;
+  background: var(--border-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -28px;
+  top: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 4px solid #ffffff;
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.timeline-content {
+  background: var(--bg-card);
+  padding: 18px 22px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.timeline-content:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-color);
+}
+
+.timeline-date {
+  display: inline-block;
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+}
+
+.timeline-content h3 {
+  font-size: 1.15rem;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.timeline-content .institution {
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 0.92rem;
+  margin-bottom: 6px;
+}
+
+.timeline-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+/* ========================================================
+   SECTION: KEAHLIAN (CARDS GRID)
+   ======================================================== */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile-first default */
+  gap: 18px;
+}
+
+.card {
+  background: var(--bg-card);
+  padding: 24px 20px;
+  border-radius: var(--radius-md);
+  text-align: center;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
+}
+
+.card-icon {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  display: inline-block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.tag {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 102, 204, 0.15);
+}
+
+/* ========================================================
+   SECTION: PROYEK TERPILIH
+   ======================================================== */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.project-card {
+  background: var(--bg-card);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-color);
+}
+
+.project-header {
+  margin-bottom: 10px;
+}
+
+.project-badge {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.project-card .tags {
+  justify-content: flex-start;
+}
+
+/* ========================================================
+   SECTION: KONTAK & FORM
+   ======================================================== */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.contact-info,
+.contact-form-container {
+  background: var(--bg-card);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-info h3,
+.contact-form-container h3 {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.contact-info > p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.contact-icon {
+  font-size: 1.4rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-light);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.contact-list div {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-list strong {
+  font-size: 0.85rem;
+  color: var(--text-dark);
+}
+
+.contact-list a,
+.contact-list span {
+  font-size: 0.95rem;
+  color: var(--primary);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+  color: var(--primary-dark);
+}
+
+/* Formulir Styling (HTML Form Sesuai Modul Hal. 14) */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.form-group input,
+.form-group textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background-color: #fafbfc;
+  color: var(--text-dark);
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+}
+
+.btn-kirim {
+  font-family: inherit;
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 2px 6px rgba(0, 102, 204, 0.3);
+}
+
+.btn-kirim:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.4);
+}
+
+/* ========================================================
+   FOOTER SEMANTIK
+   ======================================================== */
+footer {
+  background: #1e293b;
+  color: #94a3b8;
+  text-align: center;
+  padding: 28px 20px;
+  margin-top: 60px;
+  border-top: 1px solid #334155;
+}
+
+.footer-content p {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+}
+
+.footer-sub {
+  font-size: 0.82rem;
+  margin-top: 4px;
+  color: #64748b;
+}
+
+/* ========================================================
+   MEDIA QUERIES (SESUAI MODUL PERTEMUAN 3 / LKP 2B)
+   ======================================================== */
+
+/* Tablet (min-width: 768px): 2 kolom cards, nav flex-start */
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-container {
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* Desktop (min-width: 1024px): 4 kolom cards, padding bertambah */
+@media (min-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  main {
+    padding: 0 40px;
+  }
+
+  header {
+    padding: 64px 20px;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Mobile kecil (max-width: 480px): adaptasi ukuran teks & padding */
+@media (max-width: 480px) {
+  header {
+    padding: 28px 16px;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.88rem;
+  }
+
+  .foto {
+    width: 80px;
+    height: 80px;
+  }
+
+  .nav-container {
+    gap: 12px;
+    font-size: 0.85rem;
+    padding: 10px 14px;
+  }
+
+  main {
+    padding: 0 14px;
+    margin-top: 24px;
+  }
+
+  .about-card,
+  .contact-info,
+  .contact-form-container {
+    padding: 18px;
+  }
+}
+

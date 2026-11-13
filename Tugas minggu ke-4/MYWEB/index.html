@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil - Rizwar Cahyadi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Hero Section -->
+  <header>
+    <div class="header-container">
+      <div class="foto-wrapper">
+        <img src="assets/ricad.jpg" alt="Foto Profil Rizwar Cahyadi" class="foto">
+        <span class="status-badge" title="Aktif Belajar"></span>
+      </div>
+      <h1>Rizwar Cahyadi</h1>
+      <p class="subtitle">NIM: <strong>240511042</strong> | Teknik Informatika — Universitas Muhammadiyah Cirebon</p>
+      <div class="badge-group">
+        <span class="pill-badge">Mahasiswa Semester 5</span>
+        <span class="pill-badge">Networking Enthusiast</span>
+        <span class="pill-badge">Alumni SMK TKJ</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigasi Sticky (Flexbox) -->
+  <nav>
+    <div class="nav-container">
+      <a href="#tentang" class="nav-link">Tentang</a>
+      <a href="#pendidikan" class="nav-link">Pendidikan</a>
+      <a href="#keahlian" class="nav-link">Keahlian</a>
+      <a href="#proyek" class="nav-link">Proyek</a>
+      <a href="#kontak" class="nav-link">Kontak</a>
+    </div>
+  </nav>
+
+  <!-- Konten Utama Semantik -->
+  <main>
+    <!-- Section: Tentang -->
+    <section id="tentang">
+      <h2>Tentang Saya</h2>
+      <div class="about-card">
+        <p>
+          Halo! Saya <strong>Rizwar Cahyadi</strong>, mahasiswa semester 5 Program Studi Teknik Informatika di <strong>Universitas Muhammadiyah Cirebon (UMC)</strong>. 
+          Perjalanan saya di dunia teknologi berawal dari bangku SMK dengan jurusan <em>Teknik Komputer dan Jaringan (TKJ)</em>, yang menumbuhkan minat mendalam terhadap arsitektur jaringan komputer, routing, switching, dan administrasi infrastruktur sistem.
+        </p>
+        <p>
+          Melalui mata kuliah <em>Pemrograman Berbasis Platform</em>, saya mengembangkan kemampuan untuk mengintegrasikan keahlian jaringan dengan pengembangan perangkat lunak modern (Web & Multi-Platform). Saya berdedikasi membangun aplikasi yang tidak hanya interaktif dan responsif, tetapi juga andal, efisien, dan memiliki skalabilitas jaringan yang kokoh.
+        </p>
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="info-label">Nama Lengkap</span>
+            <span class="info-value">Rizwar Cahyadi</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">NIM</span>
+            <span class="info-value">240511042</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Program Studi</span>
+            <span class="info-value">Teknik Informatika (S1)</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Minat Utama</span>
+            <span class="info-value">Computer Network & Platform Dev</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Riwayat Pendidikan -->
+    <section id="pendidikan">
+      <h2>Riwayat Pendidikan</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2024 — Sekarang</span>
+            <h3>S1 Teknik Informatika</h3>
+            <p class="institution">Universitas Muhammadiyah Cirebon (UMC)</p>
+            <p class="timeline-desc">Fokus pada Pemrograman Berbasis Platform, Basis Data, Rekayasa Perangkat Lunak, dan Jaringan Komputer Lanjutan.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2021 — 2024</span>
+            <h3>SMK — Teknik Komputer dan Jaringan (TKJ)</h3>
+            <p class="institution">Sekolah Menengah Kejuruan</p>
+            <p class="timeline-desc">Mempelajari fundamental instalasi LAN/WAN, routing Mikrotik/Cisco, subnetting, perakitan hardware, dan administrasi server.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Keahlian (CSS Grid 1 -> 2 -> 4 Kolom) -->
+    <section id="keahlian">
+      <h2>Keahlian</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">🌐</div>
+          <h3>Computer Networking</h3>
+          <p>Konfigurasi TCP/IP, VLAN, Routing, Subnetting, serta pemahaman protokol jaringan.</p>
+          <div class="tags">
+            <span class="tag">TCP/IP</span>
+            <span class="tag">Mikrotik</span>
+            <span class="tag">Routing</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">💻</div>
+          <h3>HTML5 & CSS3</h3>
+          <p>Membangun struktur semantik web, layout Flexbox & Grid, serta desain responsif multi-device.</p>
+          <div class="tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS Grid</span>
+            <span class="tag">Flexbox</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3>JavaScript</h3>
+          <p>Pemrograman web interaktif, manipulasi DOM, event handling, serta dasar-dasar ES6+ modern.</p>
+          <div class="tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">DOM</span>
+            <span class="tag">ES6+</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">⚙️</div>
+          <h3>Network & OS Admin</h3>
+          <p>Instalasi dan konfigurasi dasar Linux Server, Windows Server, serta pemecahan masalah jaringan.</p>
+          <div class="tags">
+            <span class="tag">Linux</span>
+            <span class="tag">Troubleshooting</span>
+            <span class="tag">Server</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Proyek Portofolio -->
+    <section id="proyek">
+      <h2>Proyek Terpilih</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-badge">Praktikum</span>
+            <h3>Website Profil Responsif Multi-Platform</h3>
+          </div>
+          <p>Membangun website portofolio pribadi berbasis HTML5 semantik dan CSS3 murni dengan Media Queries responsif (LKP 2A & LKP 2B).</p>
+          <div class="tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">Responsive</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-badge">Networking</span>
+            <h3>Perancangan & Simulasi Jaringan Komputer</h3>
+          </div>
+          <p>Simulasi topologi jaringan komputer sekolah/kantor dengan pembagian subnet IP dan konfigurasi routing menggunakan Cisco Packet Tracer.</p>
+          <div class="tags">
+            <span class="tag">Cisco</span>
+            <span class="tag">Subnetting</span>
+            <span class="tag">Topology</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Section: Kontak & Formulir Pesan -->
+    <section id="kontak">
+      <h2>Kontak</h2>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <h3>Informasi Kontak</h3>
+          <p>Jangan ragu untuk menghubungi saya melalui kontak di bawah ini:</p>
+          <ul class="contact-list">
+            <li>
+              <span class="contact-icon">📧</span>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:rizwarcahyadi165@gmail.com">rizwarcahyadi165@gmail.com</a>
+              </div>
+            </li>
+            <li>
+              <span class="contact-icon">🐙</span>
+              <div>
+                <strong>GitHub</strong>
+                <a href="https://github.com/Ricad-27" target="_blank" rel="noopener noreferrer">github.com/Ricad-27</a>
+              </div>
+            </li>
+            <li>
+              <span class="contact-icon">🏛️</span>
+              <div>
+                <strong>Institusi</strong>
+                <span>Universitas Muhammadiyah Cirebon</span>
+              </div>
+            </li>
+            <li>
+              <span class="contact-icon">📍</span>
+              <div>
+                <strong>Lokasi</strong>
+                <span>Cirebon, Jawa Barat, Indonesia</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-form-container">
+          <h3>Kirim Pesan</h3>
+          <form class="contact-form" onsubmit="event.preventDefault(); alert('Terima kasih! Pesan simulasi Anda telah terkirim.');">
+            <div class="form-group">
+              <label for="nama">Nama Lengkap</label>
+              <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Alamat Email</label>
+              <input type="email" id="email" name="email" placeholder="nama@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="pesan">Pesan</label>
+              <textarea id="pesan" name="pesan" rows="4" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+            </div>
+            <button type="submit" class="btn-kirim">Kirim Pesan</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Semantik -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026 Rizwar Cahyadi. All rights reserved.</p>
+      <p class="footer-sub">Praktikum Pemrograman Berbasis Platform — Teknik Informatika UMC</p>
+    </div>
+  </footer>
+</body>
+</html>
+
